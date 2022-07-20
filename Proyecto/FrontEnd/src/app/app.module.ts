@@ -17,6 +17,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { interceptorProvider } from './service/interceptor-service';
 
 @NgModule({
   declarations: [
@@ -32,16 +35,20 @@ import { AppRoutingModule } from './app-routing.module';
     ProyectoComponent,
     FooterComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent 
   ],
   imports: [
     BrowserModule,
     NgCircleProgressModule.forRoot({}),
     HttpClientModule,
     AppRoutingModule,
+    FormsModule,
+    BrowserAnimationsModule
     
   ],
-  providers: [],
+  providers: [
+    interceptorProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
